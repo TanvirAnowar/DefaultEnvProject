@@ -1,0 +1,5 @@
+# Ignore the environment folder
+venv/
+
+# Ignore all .dll files
+*.dll
