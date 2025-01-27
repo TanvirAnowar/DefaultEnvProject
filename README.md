@@ -55,9 +55,10 @@ Open Anaconda PowerShell Prompt from the Start menu.
 
 Initialize Conda for PowerShell by running:
 
-powershell
-Copy
+Powershell
+
 conda init powershell
+
 Restart your PowerShell to apply the changes.
 
 Set Execution Policy
@@ -65,22 +66,22 @@ Open PowerShell with administrative privileges.
 
 Set the execution policy to allow scripts to run:
 
-powershell
-Copy
+Powershell
+
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
 When prompted, type Y and press Enter to confirm.
 Create the Conda Environment
 Navigate to your project directory and create a new Conda environment with Python 3.10:
 
-bash
-Copy
+Powershell
+
 conda create -p venv python=3.10
 -p venv specifies the path to the environment. This will create a folder named venv in your project directory.
+
 Activate the Environment
 Activate the newly created Conda environment:
 
-bash
-Copy
 conda activate .\venv\
 Your terminal prompt should now indicate that the venv environment is active.
 
@@ -89,19 +90,19 @@ Create a requirements.txt File:
 
 In your project directory, create a file named requirements.txt and add the necessary libraries:
 
-plaintext
-Copy
+Copy in plaintext:
+
 scikit-learn
 pandas
+
 Add any additional libraries your project requires.
 
 Install the Libraries:
 
 With the Conda environment activated, run:
 
-bash
-Copy
 pip install -r requirements.txt
+
 This command installs all the libraries listed in the requirements.txt file.
 
 Usage
@@ -114,18 +115,12 @@ Fork the repository.
 
 Create a new branch:
 
-bash
-Copy
 git checkout -b feature/YourFeature
 Make your changes and commit them:
 
-bash
-Copy
 git commit -m "Add YourFeature"
 Push to the branch:
 
-bash
-Copy
 git push origin feature/YourFeature
 Open a pull request.
 
