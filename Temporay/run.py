@@ -53,7 +53,7 @@ for num in range(1,100):
 
 #? List examples 
 
-fruits = ["apple","banana","cherry","dub"]
+#fruits = ["apple","banana","cherry","dub"]
 
 #print(fruits) #['apple', 'banana', 'cherry', 'dub']
 
@@ -85,3 +85,58 @@ fruits = ["apple","banana","cherry","dub"]
 #for index,fruit in enumerate(fruits):
 #   print(index,fruit)
 
+#list comprehension 
+#comp = [ num for num in range(10) if num%2==0 ]
+
+#list1 = [1,2,3,4]
+#list2 = ['a','b','c','d']
+#comp_list = [(i,j) for i in list1 for j in list2]
+#print(comp_list)
+
+# first_tup = (1,2,3)
+# second_tup = (4,5,6)
+
+# new_tup = first_tup + second_tup
+#print(new_tup*3)
+# print(new_tup)
+# print(new_tup.index(6))
+# print(new_tup.count(6))
+
+# a,b,c,*d,e,f = new_tup
+# print(a,b,c,d,e,f)
+
+# print(type(d))
+
+# ? Dictionary 
+
+new_dic = {"name":"Tanvir","age":"25","city":"Dhaka"}
+'''
+
+print(new_dic)
+
+print(new_dic.get("city"))
+
+print(new_dic.keys())
+print(new_dic.values())
+print(new_dic.items())
+print(new_dic.pop("age"))
+print(new_dic)
+print(new_dic.popitem())
+print(new_dic)
+new_dic.update({"country":"Bangladesh"})
+print(new_dic)
+new_dic.popitem()
+print(new_dic)
+new_dic.clear()
+print(new_dic)
+
+copy_dic = new_dic.copy()
+new_dic.update({"country":"UK"})
+print(new_dic,copy_dic)
+'''
+
+for key,value in new_dic.items():
+   print(key,value)
+   
+print(type(new_dic.items()))
+   
