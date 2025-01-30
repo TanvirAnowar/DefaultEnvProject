@@ -38,4 +38,31 @@ def password_strength_func(password):
 
 lambda_func = lambda a,b: a+b
 
-print(lambda_func(10,20))
+# print(lambda_func(10,20))
+
+# ? MAP FUNCTION
+
+def square(a,b):
+    return a*b
+
+list_a = [1,2,3,4,5,6,7,8,9,10]
+list_b = [11,12,13,14,15,16,17,18,19,20]
+
+list_square = map(square,list_a,list_b)
+# print(list(list_square))
+
+new_list = map(lambda a,b:a*b,list_a,list_b)
+# print(list(new_list))
+
+
+# ? filter function
+
+def even(a):
+    return a%2==0
+
+filtered_list = filter(even, list_a)
+# print(list_a, list(filtered_list))
+
+filtered_list = filter(lambda num: num>3 and num<8, list_a)
+print(list_a, list(filtered_list))
+
