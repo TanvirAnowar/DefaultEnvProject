@@ -1,12 +1,14 @@
 # Tokenization 
 import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize import sent_tokenize
 
 # Download the necessary NLTK data
+nltk.download('punkt_tab')
 nltk.download('punkt')
 
-corpus = '''hellow welcome to the world of programming, 
-            we are learning python programming, please stay with us!
-            so are you ready to learn python programming? lets start!'''
+corpus = '''hello welcome to the world of programming. we are learning python programming, please stay with us! so are you ready to learn python programming? lets start!'''
 
-sent_tokenize(corpus)
+documents = sent_tokenize(corpus)
+
+#print(documents)
+
