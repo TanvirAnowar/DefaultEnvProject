@@ -3,13 +3,16 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
+from nltk.stem import SnowballStemmer
+from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
 # Download the necessary NLTK data
-#nltk.download('punkt_tab')
-#nltk.download('punkt')
-#nltk.download('wordnet')
+nltk.download('punkt_tab')
+nltk.download('punkt')
+nltk.download('wordnet')
 nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger_english')
 
 lemma = WordNetLemmatizer()
 
@@ -46,20 +49,37 @@ sentence_token = sent_tokenize(sentance)
 #? 2. Tokenize the words
 sentences_after_join = []
 
+ps = PorterStemmer()
+sbs = SnowballStemmer('english')
+wnlem = WordNetLemmatizer()
 for i in range (len(sentence_token)):
     word_token = word_tokenize(sentence_token[i])
     
     #? 3. Remove the stop words
-    word_token_after_steaming = [word for word in word_token if word.lower() not in stopwords.words('english')]
+    words = [word for word in word_token 
+            if word.lower() not in stopwords.words('english')]
+    pos_tag = nltk.pos_tag(words)
     
-    sentences_after_join.append(' '.join(word_token_after_steaming))
+    word_token_after_steaming = [ps.stem(word) for word in word_token 
+                                 if word.lower() not in stopwords.words('english')]
     
+    word_token_after_steaming_snowball = [sbs.stem(word) for word in word_token 
+                                  if word.lower() not in stopwords.words('english')]
     
-print(sentences_after_join)
+    word_token_after_lemmeatizer = [wnlem.lemmatize(word, pos='v') for word in word_token 
+                                  if word.lower() not in stopwords.words('english')]
+    
+    # sentences_after_join.append(' '.join(word_token_after_steaming))
+    
+    # sentence_token[i]   = ' '.join(word_token_after_lemmeatizer)
+    
+print(pos_tag)
+# print(word_token_after_steaming)
+# print(word_token_after_steaming_snowball)
     
     
 
-# ps = PorterStemmer()
+
 
 
 
